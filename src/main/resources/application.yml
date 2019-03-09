@@ -1,2 +1,13 @@
 property1: app
 property2: app
+
+persons-list.persons:
+  - firstName: John
+    lastName: Smith
+    age: 30
+  - firstName: Tom
+    lastName: Walker
+    age: 40
+  - firstName: Kate
+    lastName: Hamilton
+    age: 50
