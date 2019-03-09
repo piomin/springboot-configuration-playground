@@ -17,7 +17,7 @@ public class ConfigurationPropertiesTest {
 
     @Test
     public void test() {
-        Assert.assertTrue(personsList.getPersons().size() == 3);
+        Assert.assertEquals(3, personsList.getPersons().size());
         Assert.assertEquals("John", personsList.getPersons().get(0).getFirstName());
         Assert.assertEquals("Tom", personsList.getPersons().get(1).getFirstName());
         Assert.assertEquals("Kate", personsList.getPersons().get(2).getFirstName());
