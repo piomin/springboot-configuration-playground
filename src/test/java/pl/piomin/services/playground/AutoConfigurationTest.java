@@ -20,7 +20,7 @@ public class AutoConfigurationTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(AutoConfigurationTest.class);
 
     @Test(expected = NoSuchBeanDefinitionException.class)
-    public void test1() {
+    public void testMyBean1() {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner();
         contextRunner
                 .withUserConfiguration(MyConfiguration.class)
@@ -32,7 +32,7 @@ public class AutoConfigurationTest {
     }
 
     @Test(expected = NoSuchBeanDefinitionException.class)
-    public void test2Negative() {
+    public void testMyBean2Negative() {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner();
         contextRunner
                 .withPropertyValues("myBean2.enabled=false")
@@ -44,7 +44,7 @@ public class AutoConfigurationTest {
     }
 
     @Test
-    public void test2Positive() {
+    public void testMyBean2Positive() {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner();
         contextRunner
                 .withPropertyValues("myBean2.enabled=true")
@@ -56,7 +56,7 @@ public class AutoConfigurationTest {
     }
 
     @Test(expected = NoSuchBeanDefinitionException.class)
-    public void test3() {
+    public void testMyBean3() {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner();
         contextRunner
                 .withUserConfiguration(MyConfiguration.class)
@@ -67,7 +67,7 @@ public class AutoConfigurationTest {
     }
 
     @Test(expected = NoSuchBeanDefinitionException.class)
-    public void test4Negative() {
+    public void testMyBean4Negative() {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner();
         contextRunner
                 .withUserConfiguration(MyConfiguration.class)
@@ -79,7 +79,7 @@ public class AutoConfigurationTest {
     }
 
     @Test
-    public void test4Positive() {
+    public void testMyBean4Positive() {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner();
         contextRunner
                 .withUserConfiguration(MyConfiguration.class)
@@ -115,7 +115,7 @@ public class AutoConfigurationTest {
     }
 
     @Test
-    public void test5() {
+    public void testMyBean5() {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner();
         contextRunner
                 .withUserConfiguration(MyConfiguration.class)
@@ -127,7 +127,7 @@ public class AutoConfigurationTest {
     }
 
     @Test
-    public void test6() {
+    public void testMyBean6() {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner();
         contextRunner.withUserConfiguration(MyConfiguration.class)
                 .run(context -> {
