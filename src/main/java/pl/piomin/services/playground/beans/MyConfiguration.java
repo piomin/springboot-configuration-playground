@@ -29,7 +29,7 @@ public class MyConfiguration {
 	}
 
 	@Bean
-	@ConditionalOnClass({MyBean1.class, MyBean2.class})
+	@ConditionalOnProperty("multipleBeans.enabled")
 	@ConditionalOnBean({MyBean1.class, MyBean2.class})
 	public MyBean4 myBean4() {
 		return new MyBean4();
