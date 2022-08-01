@@ -1,16 +1,13 @@
 package pl.piomin.services.playground;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest(properties = {
     "spring.config.location=classpath:/global.yml,classpath:/override.yml,classpath:/app.yml"
 })
-@RunWith(SpringRunner.class)
 public class LoadingOrderTest {
 
     @Value("${property1}")
@@ -22,8 +19,8 @@ public class LoadingOrderTest {
 
     @Test
     public void test() {
-        Assert.assertEquals("app", property3);
-        Assert.assertEquals("override", property2);
-        Assert.assertEquals("global", property1);
+        Assertions.assertEquals("app", property3);
+        Assertions.assertEquals("override", property2);
+        Assertions.assertEquals("global", property1);
     }
 }

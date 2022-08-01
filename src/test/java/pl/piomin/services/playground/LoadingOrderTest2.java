@@ -1,16 +1,13 @@
 package pl.piomin.services.playground;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest(properties = {
     "spring.config.additional-location=classpath:/sample-appconfig.yml"
 })
-@RunWith(SpringRunner.class)
 public class LoadingOrderTest2 {
 
     @Value("${property1}")
@@ -22,8 +19,8 @@ public class LoadingOrderTest2 {
 
     @Test
     public void test() {
-        Assert.assertEquals("sample", property3);
-        Assert.assertEquals("sample", property2);
-        Assert.assertEquals("app", property1);
+        Assertions.assertEquals("sample", property3);
+        Assertions.assertEquals("sample", property2);
+        Assertions.assertEquals("app", property1);
     }
 }

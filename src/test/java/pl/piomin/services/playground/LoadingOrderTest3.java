@@ -1,16 +1,13 @@
 package pl.piomin.services.playground;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest(properties = {
     "spring.profiles.active=override"
 })
-@RunWith(SpringRunner.class)
 public class LoadingOrderTest3 {
 
     @Value("${property1}")
@@ -22,8 +19,8 @@ public class LoadingOrderTest3 {
 
     @Test
     public void test() {
-        Assert.assertEquals("override", property3);
-        Assert.assertEquals("override", property2);
-        Assert.assertEquals("app", property1);
+        Assertions.assertEquals("override", property3);
+        Assertions.assertEquals("override", property2);
+        Assertions.assertEquals("app", property1);
     }
 }
