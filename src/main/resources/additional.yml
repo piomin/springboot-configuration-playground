@@ -2,3 +2,5 @@ property1: additional
 property2: additional
 property3: additional
 property4: additional
+
+property.default: additional

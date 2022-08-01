@@ -1,6 +1,8 @@
 property1: app
 property2: app
 
+property.default: app
+
 persons-list.persons:
   - firstName: John
     lastName: Smith
