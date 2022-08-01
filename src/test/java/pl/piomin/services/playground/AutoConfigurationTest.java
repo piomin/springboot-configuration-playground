@@ -98,6 +98,7 @@ public class AutoConfigurationTest {
     public void testOrder() {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner();
         contextRunner
+                .withAllowBeanDefinitionOverriding(true)
                 .withUserConfiguration(MyConfiguration.class, MyConfigurationOverride.class)
                 .withPropertyValues("myBean2.enabled")
                 .run(context -> {
@@ -111,6 +112,7 @@ public class AutoConfigurationTest {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner();
         Assertions.assertThrows(NoSuchBeanDefinitionException.class, () -> {
             contextRunner
+                    .withAllowBeanDefinitionOverriding(true)
                     .withUserConfiguration(MyConfiguration.class, MyConfigurationOverride.class)
                     .withPropertyValues("myBean2.enabled", "multiple.beans")
                     .run(context -> {

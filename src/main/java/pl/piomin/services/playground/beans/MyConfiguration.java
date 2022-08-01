@@ -23,7 +23,7 @@ public class MyConfiguration {
 	}
 
 	@Bean
-	@ConditionalOnJava(range = ConditionalOnJava.Range.EQUAL_OR_NEWER, value = JavaVersion.NINE)
+	@ConditionalOnJava(range = ConditionalOnJava.Range.EQUAL_OR_NEWER, value = JavaVersion.EIGHTEEN)
 	public MyBean3 myBean3() {
 		return new MyBean3();
 	}
