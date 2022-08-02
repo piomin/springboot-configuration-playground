@@ -4,6 +4,7 @@ metadata:
   name: springboot-configuration-playground
 data:
   PROPERTY_DEFAULT: env
+  SPRING_APPLICATION_JSON: '{"property":{"default":"json"}}'
 ---
 apiVersion: v1
 kind: ConfigMap
