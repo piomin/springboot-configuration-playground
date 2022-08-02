@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-configuration-playground
+spec:
+  selector:
+    matchLabels:
+      app: springboot-configuration-playground
+  template:
+    metadata:
+      labels:
+        app: springboot-configuration-playground
+    spec:
+      containers:
+      - name: springboot-configuration-playground
+        image: piomin/springboot-configuration-playground
+        ports:
+        - containerPort: 8080

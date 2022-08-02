@@ -13,3 +13,9 @@ persons-list.persons:
   - firstName: Kate
     lastName: Hamilton
     age: 50
+---
+spring:
+  config:
+    activate:
+      on-cloud-platform: "kubernetes"
+property.activation: "I'm on Kubernetes!"
