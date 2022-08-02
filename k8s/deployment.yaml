@@ -16,3 +16,13 @@ spec:
         image: piomin/springboot-configuration-playground
         ports:
         - containerPort: 8080
+        volumeMounts:
+          - mountPath: /config
+            name: app-vol
+        envFrom:
+          - configMapRef:
+              name: springboot-configuration-playground
+      volumes:
+        - name: app-vol
+          configMap:
+            name: springboot-configuration-playground-ext

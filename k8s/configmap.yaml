@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: springboot-configuration-playground
+data:
+  PROPERTY_DEFAULT: env
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: springboot-configuration-playground-ext
+data:
+  application.yml: |
+    property.default: external
