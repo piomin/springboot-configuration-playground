@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(properties = {
-    "spring.profiles.active=override"
+    "spring.config.additional-location=classpath:/sample-appconfig.yml"
 })
-public class LoadingOrderTest3 {
+public class LoadingOrderSecondTest {
 
     @Value("${property1}")
     String property1;
@@ -19,8 +19,8 @@ public class LoadingOrderTest3 {
 
     @Test
     public void test() {
-        Assertions.assertEquals("override", property3);
-        Assertions.assertEquals("override", property2);
+        Assertions.assertEquals("sample", property3);
+        Assertions.assertEquals("sample", property2);
         Assertions.assertEquals("app", property1);
     }
 }

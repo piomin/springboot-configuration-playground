@@ -8,7 +8,7 @@ import org.springframework.test.context.TestPropertySource;
 
 @SpringBootTest
 @TestPropertySource("classpath:/additional-test.yml")
-public class LoadingOrderTest4 {
+public class LoadingOrderFourthTest {
 
     @Value("${property1}")
     String property1;
